@@ -1,6 +1,17 @@
+# Local credentials
 .env
+.env.*
+!.env.example
+
+# Runtime state and dependencies
 .runtime/
 node_modules/
+*.log
+
+# One-time authorization QR codes
+feishu-auth.png
+feishu-im-auth.png
+
+# OS metadata
 .DS_Store
 Thumbs.db
-*.log

@@ -3,7 +3,10 @@
 [English](README_EN.md) | **简体中文**
 
 把飞书机器人消息转发到本机**已登录的 ChatGPT 网页**，再把网页回答回复回飞书。
-![demo](./img/demo.png)
+![demo](./img/who-zh.png)
+
+同时支持多模态的消息发送
+![](./img/files-zh.png)
 
 
 它使用飞书官方 `@larksuiteoapi/node-sdk` 的 WebSocket 长连接，因此不需要公网服务器、域名、Webhook 或 `lark-cli`。

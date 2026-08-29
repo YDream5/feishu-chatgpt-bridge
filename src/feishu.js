@@ -11,11 +11,15 @@ export function createFeishuChannel() {
     loggerLevel: Lark.LoggerLevel.info,
     policy: {
       dmMode: 'open',
-      requireMention: true,
+      // Group messages must reach our handler so file-only messages can be
+      // cached before the user mentions the bot. index.js filters them.
+      requireMention: false,
       respondToMentionAll: false,
     },
     safety: {
-      chatQueue: { enabled: true },
+      // The SDK queue batches by chatId only; our attachment batches are
+      // isolated by chatId + senderId, so avoid cross-user merging here.
+      chatQueue: { enabled: false },
     },
     outbound: {
       textChunkLimit: 3000,

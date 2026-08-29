@@ -1,7 +1,7 @@
 import { askBrowser } from './browser-bridge.js';
 
-export async function askChatGPT(text, sessionKey) {
+export async function askChatGPT(text, sessionKey, attachments = []) {
   const prompt = String(text ?? '').trim();
   if (!prompt) throw new Error('Empty message');
-  return askBrowser(prompt, sessionKey || 'default');
+  return askBrowser(prompt, sessionKey || 'default', attachments);
 }

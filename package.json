@@ -1,6 +1,6 @@
 {
   "name": "feishu-local-gpt-bridge",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,14 +11,11 @@
     "restart:bg": "node scripts/service.js restart",
     "status": "node scripts/service.js status",
     "logs": "node scripts/service.js logs",
-    "check": "node src/check.js"
+    "check": "node src/check.js",
+    "test": "node --test"
   },
   "dependencies": {
     "@larksuiteoapi/node-sdk": "^1.73.0",
     "ws": "^8.18.3"
-  },
-  "description": "Bridge Feishu bot messages to a locally logged-in ChatGPT web session via Chrome.",
-  "engines": {
-    "node": ">=20"
   }
 }

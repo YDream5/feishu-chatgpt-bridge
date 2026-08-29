@@ -1,21 +1,38 @@
 {
   "manifest_version": 3,
   "name": "Feishu ChatGPT Browser Bridge",
-  "version": "0.2.5",
+  "version": "0.3.19",
   "description": "Bridge local Feishu messages into your logged-in ChatGPT tab.",
   "permissions": [
-    "tabs", "storage", "scripting", "alarms",
-    "clipboardRead", "clipboardWrite"
+    "tabs",
+    "storage",
+    "scripting",
+    "alarms",
+    "downloads"
   ],
-  "host_permissions": ["https://chatgpt.com/*"],
-  "background": { "service_worker": "background.js" },
-  "content_scripts": [{
-    "matches": ["https://chatgpt.com/*"],
-    "js": ["content.js"],
-    "run_at": "document_idle"
-  }],
-  "action": { "default_popup": "popup.html" },
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://*.oaiusercontent.com/*",
+    "https://*.openai.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' ws://127.0.0.1:17331"
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' ws://127.0.0.1:17331 https://chatgpt.com https://*.oaiusercontent.com https://*.openai.com"
   }
 }
