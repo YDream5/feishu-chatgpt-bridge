@@ -1,4 +1,4 @@
-# Feishu ChatGPT Browser Bridge: Share Your Sol With Your Family and Friends
+# 用飞书机器人分享你的gpt plus给别人：免反代
 
 [English](README_EN.md) | **简体中文**
 
